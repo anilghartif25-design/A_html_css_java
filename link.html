@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="view" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>We are connecting to the js</h2>
+    <p id="text">This text will change</p>
+    <p>Lets display time in our screen</p>
+    <p id="time">here</p>
+    <input
+      type="button"
+      value="hide text"
+      onclick="document.getElementById('text').style.visibility = 'hidden'"
+    />
+    <input
+      type="button"
+      value="visible text"
+      onclick="document.getElementById('text').style.visibility = 'visible'"
+    />
+    <button id="btn">+</button>
+    <p id="count">0</p>
+  </body>
+  <script>
+    document.getElementById("text").innerHTML = "Let's connect Js to html";
+    document.getElementById("time").innerHTML = "Date:" + Date();
+    let c = 0;
+    const btn = document.getElementById("btn");
+    btn.addEventListener("click", onClick);
+    function onClick() {
+      let countEle = document.getElementById("count");
+      c = c + 1;
+      countEle.innerHTML = c;
+      c % 2 === 0
+        ? (countEle.style.color = "pink")
+        : (countEle.style.color = "blue");
+    }
+  </script>
+</html>
